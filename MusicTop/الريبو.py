@@ -18,8 +18,8 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(    filters.user(SUDO_USERS) & filters.command(["تحديث"], prefixes=f"{HNDLR}"))
-async def restart(client, m: Message):
+@Client.on_message(filters.command(["تحديث"], prefixes=f"{HNDLR}"))
+async def help(client, m: Message):
     await m.delete()
     loli = await m.reply("①")
     await loli.edit("②")
@@ -32,14 +32,10 @@ async def restart(client, m: Message):
     await loli.edit("⑨")
     await loli.edit("⑩")   
     await loli.edit("𝙏𝙊𝙋𝘼𝘾")   
-    await loli.edit("𝙏𝙊𝙋𝘼𝘾")   
-    await loli.edit("𝙏𝙊𝙋𝘼𝘾")   
-    await loli.edit("𝙏𝙊𝙋𝘼𝘾")   
-    await loli.edit("𝙏𝙊𝙋𝘼𝘾")   
-    await loli.edit("**✅ تم اعاده تشغيل سورس ميوزك توب**")
+    await loli.edit("✅𝙏𝙊𝙋𝘼𝘾:@OYOYV تم اعاده تشغيل سورس ميوزك توب")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
-@Client.on_message(filters.command(["اوامري<"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["اوامري"], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
     await m.delete()
     HELP = f"""
@@ -75,10 +71,9 @@ async def repo(client, m: Message):
 🤖 اختصاص هذا البوت تنزيل المقاطع الصوتيه
  وتشغيل او تنزيل مقاطع الفيديو و تشغيل 
 وتشغيل الاغاني ول فيديوهات في المكالمات
- ==============
- اذا عندك مشكله او ستفسار 
- @GTT_G 
- @TOP_BBOT
- المساعده : @TROTOOL
+====================
+المطور 🇮🇶 : @GTT_G 
+القناة 🇮🇶 :  @OYOYV
+المساعده 🇮🇶 : @TROTOOL
 """
     await m.reply(REPO, disable_web_page_preview=True)
