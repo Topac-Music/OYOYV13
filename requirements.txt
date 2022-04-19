@@ -2,7 +2,6 @@ TgCrypto
 pyrogram
 py-tgcalls==0.8.2
 requests
-webbrowser
 aiohttp
 aiofiles
 asyncio
