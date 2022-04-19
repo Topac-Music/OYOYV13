@@ -37,8 +37,7 @@ async def restart(client, m: Message):
 @Client.on_message(filters.command(["اوامري"], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
     await m.delete()
-    await m.reply_photo(
-    photo="https://telegra.ph/file/22e2ffdf24abb6bc9bd1b.jpg",
+    await m.delete() await m.reply_photo( photo="https://telegra.ph/file/22e2ffdf24abb6bc9bd1b.jpg",
     HELP = f"""
 <b>👋 اهلا {m.from_user.mention}!
 
@@ -72,9 +71,7 @@ async def repo(client, m: Message):
 🤖 اختصاص هذا البوت تنزيل المقاطع الصوتيه
  وتشغيل او تنزيل مقاطع الفيديو و تشغيل 
 وتشغيل الاغاني ول فيديوهات في المكالمات
-===========
-المطور 🇮🇶 : @GTT_G 
-القناة 🇮🇶 :  @OYOYV
-المساعده 🇮🇶 : @TROTOOL
+@GTT_G @OYOYV
+المساعده : @TROTOOL
 """
     await m.reply(REPO, disable_web_page_preview=True)
