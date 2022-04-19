@@ -407,4 +407,3 @@ async def resume(client, m: Message):
             await m.reply(f"**هناك خطأ ** \n`{e}`")
     else:
         await m.reply("**❌ لا شيء متوقف مؤقتا حاليا !**")
-
