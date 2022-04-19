@@ -37,7 +37,7 @@ async def restart(client, m: Message):
 @Client.on_message(filters.command(["اوامري"], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
     await m.delete()
-    await m.delete() await m.reply_photo( photo="https://telegra.ph/file/22e2ffdf24abb6bc9bd1b.jpg",
+    await m.reply_photo( photo="https://telegra.ph/file/22e2ffdf24abb6bc9bd1b.jpg",
     HELP = f"""
 <b>👋 اهلا {m.from_user.mention}!
 
