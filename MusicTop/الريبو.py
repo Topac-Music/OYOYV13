@@ -79,11 +79,11 @@ async def help(client, m: Message):
 ▪︎▪︎▪︎▪︎●︎︎▪︎▪︎︎▪︎▪︎
 🛠 | @OYOYV
 ⭐ | @GTT_G"""
-    await m.reply(HELP)
+await m.reply(HELP)
 @Client.on_message(filters.command(["معلومات"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
-    await m.delete()
-    REPO = f"""
+await m.delete()
+REPO = f"""
 <b>👋  اهلا {m.from_user.mention}!
 
 🎶 هذا هو سورس ميوزك توب 
@@ -93,4 +93,4 @@ async def repo(client, m: Message):
 @GTT_G @OYOYV
 المساعده : @TROTOOL
 """
-    await m.reply(REPO, disable_web_page_preview=True)
+await m.reply(REPO, disable_web_page_preview=True)
