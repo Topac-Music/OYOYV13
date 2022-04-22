@@ -1,27 +1,4 @@
-import asyncio
-import math
 import os
-import time
-import aiofiles
-import aiohttp
-import wget
-import aiohttp
-from io import BytesIO
-from traceback import format_exc
-from pyrogram import Client, filters
-from pyrogram.types import Message
-from Python_ARQ import ARQ
-from pyrogram import Client, filters
-from pyrogram.types import Message
-from pytgcalls import StreamType
-from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from pytgcalls.types.input_stream.quality import HighQualityAudio,    HighQualityVideo,    LowQualityVideo,    MediumQualityVideo
-from youtubesearchpython import VideosSearch
-from config import HNDLR, bot, call_py
-from pyrogram.errors import FloodWait, MessageNotModified
-from youtubesearchpython import SearchVideos
-from yt_dlp import YoutubeDL
-from MusicTop.helpers.merrors import capture_err
 import sys
 from datetime import datetime
 from time import time
@@ -44,51 +21,55 @@ async def _human_time_duration(seconds):
 @Client.on_message(    filters.user(SUDO_USERS) & filters.command(["تحديث"], prefixes=f"{HNDLR}"))
 async def restart(client, m: Message):
     await m.delete()
-    loli = await m.reply("①")
-    await loli.edit("②")
-    await loli.edit("③")
-    await loli.edit("④")
-    await loli.edit("⑤")
-    await loli.edit("⑥")
-    await loli.edit("⑦")
-    await loli.edit("⑧")
-    await loli.edit("⑨")
-    await loli.edit("⑩")   
-    await loli.edit("✅𝙏𝙊𝙋𝘼𝘾:@OYOYV تم اعاده تشغيل سورس ميوزك توب")
+    loli = await m.reply("1")
+    await loli.edit("2")
+    await loli.edit("3")
+    await loli.edit("4")
+    await loli.edit("5")
+    await loli.edit("6")
+    await loli.edit("7")
+    await loli.edit("8")
+    await loli.edit("9")
+    await loli.edit("**✅ تم اعاده تشغيل موسيقى سورس توب")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
 @Client.on_message(filters.command(["اوامري"], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
     await m.delete()
-    await m.reply_photo( photo="https://telegra.ph/file/22e2ffdf24abb6bc9bd1b.jpg",
-HELP = f"""
-<b>👋 اهلا {m.from_user.mention}!
+    HELP = f"""
+<b>👋  هلا حياتي {m.from_user.mention}!
 
-اوامر سورس ميوزك توب 
-▪︎▪︎▪︎▪︎●︎︎▪︎▪︎︎▪︎▪︎
-🎵 | لتشغيل صوتية في المكالمة أرسل ⇦ [ {HNDLR}تشغيل  + اسم الاغنية ]
-🎵 | لتشغيل فيديو في المكالمة  ⇦ [ {HNDLR}تشغيل_فيديو  + اسم الاغنية ]
-▪︎▪︎▪︎▪︎●︎︎▪︎▪︎︎▪︎▪︎
+اوامر سورس ميوزك توب
+——————×—————
 
-🎵 | لأيقاف الاغنية او الفيديو مؤقتآ  ⇦ [ {HNDLR}استئناف ] 
-🎵 | لأعاده تشغيل الاغنية ⇦  [ {HNDLR}ايقاف_الاستئناف ]
-🎵 | لأيقاف الاغنية  ⇦ [ {HNDLR}ايقاف ] 
-▪︎▪︎▪︎▪︎●︎︎▪︎▪︎︎▪︎▪︎
+↲♬ | لتشغيل صوتية في المكالمة أرسل ⇦ [ {HNDLR}تشغيل  + اسم الاغنية ]
+↲♬ | لتشغيل فيديو في المكالمة  ⇦ [ {HNDLR}تشغيل_فيديو  + اسم الاغنية ]
+———————×———————
 
-🎵 | لتحميل صوتية أرسل ⇦ [ {HNDLR}تحميل + اسم الاغنية او الرابط ]
-🎵 | لتحميل فيديو  ⇦  [ {HNDLR}تحميل_فيديو + اسم الاغنية او الرابط ]
-▪︎▪︎▪︎▪︎●︎︎▪︎▪︎︎▪︎▪︎
-🎵 | حول السورس ⇦  [ {HNDLR}معلومات ]
-🎵 | لأعاده تشغيل التنصيب أرسل ⇦  [ {HNDLR}تحديث ]
-▪︎▪︎▪︎▪︎●︎︎▪︎▪︎︎▪︎▪︎
-🛠 | @OYOYV
-⭐ | @GTT_G"""
+↲♬ | لأيقاف الاغنية او الفيديو مؤقتآ  ⇦ [ {HNDLR}استئناف ] 
+↲♬ | لأعاده تشغيل الاغنية ⇦  [ {HNDLR}ايقاف_الاستئناف ]
+↲♬ | لأيقاف الاغنية  ⇦ [ {HNDLR}ايقاف ] 
+↲♬ | لتغطي الاغنية الحالية و تشغيل الاغنية التالية ⇦ [ {HNDLR}التالي ]
+↲♬ | لتشغيل الاغنية عشوائية من قناة او مجموعة  ⇦ [ {HNDLR}اغنيه عشوائية ]
+———————×———————
+
+↲♬ | لتحميل صوتية أرسل ⇦ [ {HNDLR}تحميل + اسم الاغنية او الرابط ]
+↲♬ | لتحميل فيديو  ⇦  [ {HNDLR}تحميل_فيديو + اسم الاغنية او الرابط ]
+———————×———————
+
+↲♬ | حول السورس ⇦  [ {HNDLR}السورس ]
+↲♬ | لأعاده تشغيل التنصيب أرسل ⇦  [ {HNDLR}تحديث ]
+———————×———————
+المطور 💻 : @GTT_G
+القناة 🎈 : @OYOYV
+المساعده : @TROTOOL
+🛠 """
     await m.reply(HELP)
-@Client.on_message(filters.command(["معلومات"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["السورس"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
-await m.delete()
-REPO = f"""
-<b>👋  اهلا {m.from_user.mention}!
+    await m.delete()
+    REPO = f"""
+<b>👋  هلا عمري {m.from_user.mention}!
 
 🎶 هذا هو سورس ميوزك توب 
 🤖 اختصاص هذا البوت تنزيل المقاطع الصوتيه
@@ -96,5 +77,6 @@ REPO = f"""
 وتشغيل الاغاني ول فيديوهات في المكالمات
 @GTT_G @OYOYV
 المساعده : @TROTOOL
+
 """
     await m.reply(REPO, disable_web_page_preview=True)
