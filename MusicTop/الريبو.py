@@ -18,6 +18,10 @@ from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio,    HighQualityVideo,    LowQualityVideo,    MediumQualityVideo
 from youtubesearchpython import VideosSearch
 from config import HNDLR, bot, call_py
+from pyrogram.errors import FloodWait, MessageNotModified
+from youtubesearchpython import SearchVideos
+from yt_dlp import YoutubeDL
+from MusicTop.helpers.merrors import capture_err
 import sys
 from datetime import datetime
 from time import time
@@ -79,7 +83,7 @@ HELP = f"""
 ▪︎▪︎▪︎▪︎●︎︎▪︎▪︎︎▪︎▪︎
 🛠 | @OYOYV
 ⭐ | @GTT_G"""
-await m.reply(HELP)
+    await m.reply(HELP)
 @Client.on_message(filters.command(["معلومات"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
 await m.delete()
@@ -93,4 +97,4 @@ REPO = f"""
 @GTT_G @OYOYV
 المساعده : @TROTOOL
 """
-await m.reply(REPO, disable_web_page_preview=True)
+    await m.reply(REPO, disable_web_page_preview=True)
